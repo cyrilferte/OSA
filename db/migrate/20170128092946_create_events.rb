@@ -5,7 +5,7 @@ class CreateEvents < ActiveRecord::Migration[5.0]
       t.float :proba
       t.float :impact
       t.float :fiab
-      t.datetime :start_time
+      t.date :date
 
       t.timestamps
     end

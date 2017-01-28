@@ -10,8 +10,10 @@
 
 
     <!-- Text link -->
-
-      <%= link_to "Calendrier", root_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to calendar_path, class: "color:red;" do %>
+      <i class="fa fa-calendar" aria-hidden="true" style="color:#E30613"></i>
+    <% end %>
+      <%= link_to "Calendrier", calendar_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
       <% if user_signed_in? %>
 
@@ -37,3 +39,8 @@
 </div>
 
 </div>
+
+<% if impact => 70 %>
+  <style> background:red;</style>
+<% else %>
+<% end %>

@@ -4,7 +4,7 @@ class DaysController < ApplicationController
   # GET /days
   # GET /days.json
   def index
-    @days = Day.all
+       @days = Day.all
   end
 
   # GET /days/1
@@ -65,7 +65,7 @@ class DaysController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_day
-      @day = Day.find_by_date(params[:id])
+      @day = Day.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -10,21 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170128095841) do
+ActiveRecord::Schema.define(version: 20170128095718) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "calendardays", force: :cascade do |t|
-    t.datetime "date"
-    t.integer  "event_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["event_id"], name: "index_calendardays_on_event_id", using: :btree
-  end
-
   create_table "days", force: :cascade do |t|
-    t.datetime "date"
+    t.date     "date"
     t.integer  "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -36,7 +28,7 @@ ActiveRecord::Schema.define(version: 20170128095841) do
     t.float    "proba"
     t.float    "impact"
     t.float    "fiab"
-    t.datetime "start_time"
+    t.date     "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -61,6 +53,5 @@ ActiveRecord::Schema.define(version: 20170128095841) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
-  add_foreign_key "calendardays", "events"
   add_foreign_key "days", "events"
 end
