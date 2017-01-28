@@ -25,7 +25,11 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(event_params)
-
+     if @event.impact > 69.0 
+       @link = "osa.fertec.fr/events/#{@event.id}"
+       sandsms(@event.name, @link, @event.proba, @event.date)
+     else
+     end
     respond_to do |format|
       if @event.save
         format.html { redirect_to @event, notice: 'Event was successfully created.' }
@@ -70,5 +74,22 @@ class EventsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
       params.require(:event).permit(:name, :proba, :impact, :fiab, :date)
+    end
+    def  sandsms(name, link, proba)
+        require 'uri'
+        require 'net/http'
+        
+        url = URI("https://api.tropo.com/1.0/sessions?action=create&token=617074795859526c4d4c4655525a6e6c59626d454f755446486c4d676e42506f5276476b7562516970464674&phonenumber=%2033675040927&msg=Probleme%20probable%20#{name}%20le%20#{date}.Voir%20les%20details%20#{link}")
+        
+        http = Net::HTTP.new(url.host, url.port)
+        http.use_ssl = true
+        http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+        
+        request = Net::HTTP::Get.new(url)
+        request["cache-control"] = 'no-cache'
+        request["postman-token"] = '64c7c0d1-9c12-8094-3425-872f377c1037'
+        
+        response = http.request(request)
+        puts response.read_body
     end
 end
