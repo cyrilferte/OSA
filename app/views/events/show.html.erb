@@ -1,21 +1,50 @@
+<script src="https://cdn.anychart.com/js/1.0.4/anychart-bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdn.anychart.com/css/1.0.4/anychart-ui.min.css" />
+
+
+
 <div class="dashboard">
   <br><br><br>
   <div class="container">
   <div class="row">
-    <div class="col-lg-2">
-      ddd
-    </div>
-    <div class="col-lg-2">
-      ddd
-    </div>
-    <div class="col-lg-8">
+    <div class="col-lg-4">
       <div class="card">
-  
+      <div class="c100 p<%=@event.impact.to_i%> center">
+                            <span><%=@event.proba%>%</span>
+                            <div class="slice"><div class="bar"></div><div class="fill"></div></div>
+                        </div>
   <div class="card-block">
-    <h4 class="card-title">Card title</h4>
+    <h4 class="card-title text-center">Impact sur la production</h4>
     <p class="card-text">
-      Some quick example text to build on the card title
-      and make up the bulk of the card's content.
+    
+    </p>
+  </div>
+</div>
+    </div>
+    <div class="col-lg-2">
+      <div class="card">
+      <div class="c100 p<%=@event.proba.to_i%> center">
+                            <span><%=@event.proba%>%</span>
+                            <div class="slice"><div class="bar"></div><div class="fill"></div></div>
+                        </div>
+  <div class="card-block">
+    <h4 class="card-title text-center">Probabilité</h4>
+    <p class="card-text">
+    
+    </p>
+  </div>
+</div>
+    </div>
+    <div class="col-lg-2">
+      <div class="card">
+      <div class="c100 p<%=@event.fiab.to_i%> center">
+                            <span><%=@event.fiab%>%</span>
+                            <div class="slice"><div class="bar"></div><div class="fill"></div></div>
+                        </div>
+  <div class="card-block">
+    <h4 class="card-title text-center">Fiabilité</h4>
+    <p class="card-text">
+    
     </p>
   </div>
 </div>
