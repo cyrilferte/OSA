@@ -5,11 +5,34 @@
   transition: all 0.3s ease;
   display: flex;
   height: 70px;
+  width: auto;
   padding: 0px 30px;
   align-items: center;
   justify-content: space-between;
 }
+@media only screen and (max-device-width: 480px) {
+  .navbar-wagon { 
+  background: white;
+  transition: all 0.3s ease;
+  display: flex;
+  height: 70px;
+  width: 480px;
+  align-items: center;
+  justify-content: space-between;
 
+  }
+  .btn{
+    visibility:hidden;
+  }
+  .navbar-wagon-brand img {
+    align:center;
+     display: block;
+  margin: 0 auto;
+    position:center;
+    float:center;
+  width: 100px;
+}
+}
 /* Optional class to fix the navbar on top */
 .navbar-wagon-fixed {
   position: fixed;

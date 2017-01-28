@@ -5,18 +5,19 @@
   </a>
 
   <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
+  <div class="navbar-wagon-right">
 
 
 
+
+
+      <% if user_signed_in? %>
+      
     <!-- Text link -->
     <%= link_to calendar_path, class: "color:red;" do %>
       <i class="fa fa-calendar" aria-hidden="true" style="color:#E30613"></i>
     <% end %>
       <%= link_to "Calendrier", calendar_path, class: "navbar-wagon-item navbar-wagon-link" %>
-
-      <% if user_signed_in? %>
-
     <!-- Profile picture and dropdown -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
@@ -39,8 +40,3 @@
 </div>
 
 </div>
-
-<% if impact => 70 %>
-  <style> background:red;</style>
-<% else %>
-<% end %>
