@@ -1,29 +1,45 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @event.name %>
-</p>
-
-<p>
-  <strong>Proba:</strong>
-  <%= @event.proba %>
-</p>
-
-<p>
-  <strong>Impact:</strong>
-  <%= @event.impact %>
-</p>
-
-<p>
-  <strong>Fiab:</strong>
-  <%= @event.fiab %>
-</p>
-
-<p>
-  <strong>Start time:</strong>
-  <%= @event.date %>
-</p>
-
+<div class="dashboard">
+  <br><br><br>
+  <div class="container">
+  <div class="row">
+    <div class="col-lg-2">
+      ddd
+    </div>
+    <div class="col-lg-2">
+      ddd
+    </div>
+    <div class="col-lg-8">
+      <div class="card">
+  
+  <div class="card-block">
+    <h4 class="card-title">Card title</h4>
+    <p class="card-text">
+      Some quick example text to build on the card title
+      and make up the bulk of the card's content.
+    </p>
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+</div>
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
+
+<style>
+  
+  .dashboard{  width:100%;
+  height:100vh;
+    background:#312783;
+    color:white;
+  }
+  .card{    border-radius: .25rem;
+    border: 1px solid rgba(0,0,0,.125);
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+</style>

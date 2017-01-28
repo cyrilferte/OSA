@@ -26,8 +26,8 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
      if @event.impact > 69.0 
-       @link = "osa.fertec.fr/events/#{@event.id}"
-       sandsms(@event.name, @link, @event.proba, @event.date)
+       @link = "psa.fertec.fr/?date=#{@event.date}"
+       sandsms(@event.name, @link, @event.proba, @event.date )
      else
      end
     respond_to do |format|
@@ -75,11 +75,11 @@ class EventsController < ApplicationController
     def event_params
       params.require(:event).permit(:name, :proba, :impact, :fiab, :date)
     end
-    def  sandsms(name, link, proba)
+    def  sandsms(name, link, proba, date)
         require 'uri'
         require 'net/http'
         
-        url = URI("https://api.tropo.com/1.0/sessions?action=create&token=617074795859526c4d4c4655525a6e6c59626d454f755446486c4d676e42506f5276476b7562516970464674&phonenumber=%2033675040927&msg=Probleme%20probable%20#{name}%20le%20#{date}.Voir%20les%20details%20#{link}")
+        url = URI("https://api.tropo.com/1.0/sessions?action=create&token=617074795859526c4d4c4655525a6e6c59626d454f755446486c4d676e42506f5276476b7562516970464674&phonenumber=%2033675040927&msg=Probleme%20probable%20#{name}%20le%20#{date}.%20Voir%20les%20details%20#{link}")
         
         http = Net::HTTP.new(url.host, url.port)
         http.use_ssl = true

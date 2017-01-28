@@ -15,7 +15,9 @@
               <% if defined?(Haml) && respond_to?(:block_is_haml?) && block_is_haml?(block) %>
                 <% capture_haml(day.day , sorted_events.fetch(day, []), &block) %>
               <% else %>
-                <% block.call day.day, sorted_events.fetch(day, []) %>
+                <%= link_to root_path(date: "#{day}"), class:"calendar-link" do %>
+                  <% block.call day.day, sorted_events.fetch(day, []) %>
+                <% end %>  
               <% end %>
                 </span>
             <% end %>
@@ -51,7 +53,8 @@
 body{
   background:#312783;
 }
-
+.calendar-link{text-decoration:none;color:#312783;}
+.calendar-link:hover{text-decoration:none;color:white !important;}
 .calender{
   margin:40px auto;
   width:70%;
@@ -117,17 +120,33 @@ body{
 
 .calender .day:hover{
   background:#312783;
-  color:#f7f7f7;
+  color:white;
   box-shadow:inset 0 0 20px rgba(0,0,0,.4);
   text-shadow:1px 1px 2px rgba(0,0,0,.4);
 }
   
 .calender .day.current{
   background:rgba(236, 154, 24, 1);
-  color:#f7f7f7;
+  color:white;
   box-shadow:inset 0 0 20px rgba( 0,0,0, .4);
   text-shadow:1px 1px 2px rgba(0,0,0,.4);}
   
 th{padding: 8px;
     line-height: 1.4;}
+    
+    @media only screen and (max-device-width: 480px) {
+   .calender{
+   font-family:'Montserrat';
+     font-size:90%;
+     width:auto;
+     height:auto;
+     display:inline-block;
+     }
+    .h1{
+  font-family:'Montserrat';
+  font-size:20px !important;
+
+}
+      
+    }
   </style>
