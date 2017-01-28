@@ -5,7 +5,8 @@
     <div class="col-sm-1">
     </div>
     <div class="col-xs-12 col-sm-10 col-sm-10">
-      Date: <%= @date %><br><br>
+      <br><br><h1>
+      Aujourd'hui</h1><br><br>
       <% @events.each do |event| %>
         <% if event.date.to_s == @date.to_s %>
           <div class="product">
