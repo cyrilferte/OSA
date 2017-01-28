@@ -11,7 +11,7 @@
 
     <!-- Text link -->
 
-      <%= link_to "All products", root_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Calendrier", root_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
       <% if user_signed_in? %>
 
@@ -28,11 +28,11 @@
 
     <!-- Button (call-to-action) -->
 
-    <%= link_to "ADD TOOL", root_path, class:"navbar-wagon-item navbar-wagon-button btn"  %>
+    <%= link_to "ADD TOOL", root_path, class:"navbar-wagon-item navbar-wagon-button btn "  %>
 
       <% else %>
-      <%= link_to "Sign UP", new_user_registration_path, class:"navbar-wagon-item navbar-wagon-button btn" %>
-      <%= link_to "Log in", new_user_session_path, class:"navbar-wagon-item navbar-wagon-button btn" %>
+      <%= link_to "Sign UP", new_user_registration_path, class:"navbar-wagon-item navbar-wagon-button btn btn-blue" %>
+      <%= link_to "Log in", new_user_session_path, class:"navbar-wagon-item navbar-wagon-button btn btn-blue" %>
   <% end %>
 </div>
 

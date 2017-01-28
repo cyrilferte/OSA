@@ -1,2 +1,16 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+
+<div class="container">
+  <div class="row">
+      <div class="col-sm-1">
+    </div>
+    <div class="col-xs-12 col-sm-10">
+    <%= month_calendar events: @events do |date, events| %>
+        <%= date %>
+    <% end %>
+    </div>
+     <div class="col-sm-1">
+    </div>
+
+  </div>
+</div>
