@@ -5,15 +5,16 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :proba %>
-    <%= f.input :impact %>
-    <%= f.input :fiab %>
+    <%= f.input :name, label: "Intitulé du Problème" %>
+    <%= f.input :proba, label: "Probabilité" %>
+    <%= f.input :impact, label: "Impact sur la production" %>
+    <%= f.input :description, label: "Source du problème" %>
+    <%= f.input :fiab, label: "Fiabilité de la source" %>
     <%= f.input :date %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, class: "btn btn-default btn-block"%>
   </div>
 <% end %>
   </div>

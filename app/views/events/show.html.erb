@@ -21,7 +21,7 @@
   </div>
 </div>
     </div>
-    <div class="col-lg-2">
+    <div class="col-lg-4">
       <div class="card">
       <div class="c100 p<%=@event.proba.to_i%> center">
                             <span><%=@event.proba%>%</span>
@@ -35,7 +35,7 @@
   </div>
 </div>
     </div>
-    <div class="col-lg-2">
+    <div class="col-lg-4">
       <div class="card">
       <div class="c100 p<%=@event.fiab.to_i%> center">
                             <span><%=@event.fiab%>%</span>
@@ -48,6 +48,23 @@
     </p>
   </div>
 </div>
+    </div>
+    <div class="col-lg-1">
+    </div>
+    <br><br><br>
+     <div class="col-lg-10">
+      <div class="card ">
+      <br><br><br><br>
+  <div class="card-block">
+    <h2 class="card-title text-center">Source du Problème</h2>
+    <p class="card-text text-center">
+      <br><br>
+  <%=  @event.description%>
+    </p>
+  </div>
+</div>
+    </div>
+    <div class="col-lg-1">
     </div>
   </div>
 </div>
@@ -63,7 +80,6 @@
     color:white;
   }
   .card{    border-radius: .25rem;
-    border: 1px solid rgba(0,0,0,.125);
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;

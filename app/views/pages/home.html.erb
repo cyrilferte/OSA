@@ -5,7 +5,8 @@
     <div class="col-sm-1">
     </div>
     <div class="col-xs-12 col-sm-10 col-sm-10">
-      Date: <%= @date %><br><br>
+      <h2 class="text-center">Tableau de bord</h2>
+     <p class="text-center"> Date: <%= @date %></p><br><br>
       <% @events.each do |event| %>
         <% if event.date.to_s == @date.to_s %>
           <div class="product">
@@ -39,8 +40,9 @@
   </div>
 </div>
 
+
 <style>
-    
+    body{background:#ecf0f1!important;}
     .product {
   display: flex;
   align-items: center;

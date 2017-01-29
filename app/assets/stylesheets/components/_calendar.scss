@@ -1,0 +1,133 @@
+@import url( https://fonts.googleapis.com/css?family=Montserrat );
+
+.clearfix{*zoom:1}.clearfix:before,.clearfix:after{display:table;line-height:0;content:""}.clearfix:after{clear:both}
+
+
+body{
+  background:#312783;
+}
+.calendar-link{text-decoration:none;color:#312783;}
+.calendar-link:hover{text-decoration:none;color:white !important;}
+.calender{
+  margin:40px auto;
+  width:70%;
+  padding:20px;
+  background:#f7f7f7;
+  border:1px solid #ccc;
+  color:#312783;
+  position:relative;
+}
+
+.calender:before,
+.calender:after{
+  content: '';
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  box-shadow: inherit;
+  -webkit-transform: rotate(2deg);
+  box-shadow:0 0 20px rgba(0,0,0,.4);
+}
+
+.calender::after{ -webkit-transform: rotate(-1deg) }
+
+.calender h1{
+  font-family:'Montserrat';
+  width:100%;
+  text-align:center;
+  text-shadow:1px 1px 0px rgba(0,0,0,.6);
+}
+.calender hfr{
+  display:block;
+  width:13.5%;
+  height:0;
+  padding-top:6%;
+  padding-bottom:8%;
+   padding-right:8%;
+  float:left;
+    border:1px solid #f7f7f7;
+  text-align:center;
+  font-family:'Montserrat';
+  text-shadow:1px 1px 0px rgba(0,0,0,.6);
+}
+.calender .day{
+  display:block;
+  width:13.5%;
+  height:50px;
+  padding-top:6%;
+  padding-bottom:8%;
+  float:left;
+  text-align:center;
+  background:#ddd;
+  border:1px solid #f7f7f7;
+  font-family:sans-serif;
+  font-size:1.4em;
+  -webkit-transition: all .2s ease;
+  cursor:pointer;
+}
+.color-1{
+  background:#c0392b !important;
+}
+.color-2{
+  background:#d35400 !important;
+}
+.color-3{
+  background:#f39c12 !important;
+}
+.color-4{
+  background:#f1c40f !important;
+}
+.color-5{
+  background:#2ecc71 !important;
+}
+.color-0{
+  background:#2ecc71 !important;
+}
+.calender .day:hover{
+
+  color:white;
+  box-shadow:inset 0 0 20px rgba(0,0,0,.4);
+  text-shadow:1px 1px 2px rgba(0,0,0,.4);
+}
+  
+.calender .day.current{
+  background:rgba(236, 154, 24, 1);
+  color:white;
+  box-shadow:inset 0 0 20px rgba( 0,0,0, .4);
+  text-shadow:1px 1px 2px rgba(0,0,0,.4);}
+  
+th{padding: 8px;
+    line-height: 1.4;}
+    
+    @media (max-width: 480px) {
+   .calender{
+   font-family:'Montserrat';
+     font-size:90%;
+     width:auto;
+     height:500px;
+     display:inline-block;
+     }
+    .h1{
+  font-family:'Montserrat';
+  font-size:20px !important;
+  color:white;
+
+}
+.calender{margin:0 auto;
+  width:100%!important;
+  background:#312783;
+  border:none;
+  position:relative;}
+  .calender:after {
+   content: none;
+}
+.calender:before {
+   content: none;
+}
+      
+    }
