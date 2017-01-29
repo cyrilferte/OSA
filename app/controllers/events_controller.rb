@@ -79,7 +79,7 @@ class EventsController < ApplicationController
         require 'uri'
         require 'net/http'
         
-        url = URI("https://api.tropo.com/1.0/sessions?action=create&token=617074795859526c4d4c4655525a6e6c59626d454f755446486c4d676e42506f5276476b7562516970464674&phonenumber=%2033675040927&msg=Probleme%20probable:%20#{name}%20le%20#{date}.%20Voir%20les%20details%20#{link}")
+        url = URI("https://api.tropo.com/1.0/sessions?action=create&token=617074795859526c4d4c4655525a6e6c59626d454f755446486c4d676e42506f5276476b7562516970464674&phonenumber=%2033601021604&msg=Probleme%20probable:%20#{name}%20le%20#{date}.%20Voir%20les%20details%20#{link}")
         
         http = Net::HTTP.new(url.host, url.port)
         http.use_ssl = true
