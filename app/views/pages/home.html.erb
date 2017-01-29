@@ -6,7 +6,7 @@
     </div>
     <div class="col-xs-12 col-sm-10 col-sm-10">
       <h2 class="text-center">Tableau de bord</h2>
-     <p class="text-center"> Date: <%= @date %></p><br><br>
+     <h4 class="text-center"> <%= @date %></h4><br><br>
       <% @events.each do |event| %>
         <% if event.date.to_s == @date.to_s %>
           <div class="product">
@@ -39,6 +39,83 @@
 
   </div>
 </div>
+<br><br><br>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+<% if current_user.site == "1GAV"%>
+<h1>Anomalie probable</h1>
+          <div class="product">
+            <div class='product-body'>
+              <h3>APPEL_OP</h3>
+              <p>durée : 469 secondes</p>
+              <p>fiabilité : 0.647 </p>
+            </div>
+          </div><br>
+          <div class="product">
+            <div class='product-body'>
+              <h3>ARRET_FAB</h3>
+              <p>durée : 448 secondes</p>
+              <p>fiabilité : 0.1999 </p>
+            </div>
+          </div><br>
+          <div class="product">
+            <div class='product-body'>
+              <h3>FIN_COURSE_CROIX</h3>
+              <p>durée : 445 secondes</p>
+              <p>fiabilité : 0.2333 </p>
+            </div>
+          </div>
+<% elsif current_user.site == "LAC"%>
+<div class="product">
+            <div class='product-body'>
+              <h3>APPEL_OP</h3>
+              <p>durée : 426 secondes</p>
+              <p>fiabilité : 0.789 </p>
+            </div>
+          </div><br>
+          <div class="product">
+            <div class='product-body'>
+              <h3>ARRET_FAB</h3>
+              <p>durée : 653 secondes</p>
+              <p>fiabilité : 0.133 </p>
+            </div>
+          </div><br>
+<% elsif current_user.site == "1MV1"%>
+<div class="product">
+            <div class='product-body'>
+              <h3>FIN_COURSE_CROIX</h3>
+              <p>durée : 725 secondes</p>
+              <p>fiabilité : 0.657 </p>
+            </div>
+          </div><br>
+          <div class="product">
+            <div class='product-body'>
+              <h3>ARRET_FAB</h3>
+              <p>durée : 577 secondes</p>
+              <p>fiabilité : 0.345 </p>
+            </div>
+          </div><br>
+          <div class="product">
+            <div class='product-body'>
+              <h3>APPEL_OP</h3>
+              <p>durée : 459 secondes</p>
+              <p>fiabilité : 0.895 </p>
+            </div>
+          </div>
+<% end %>
+    </div>
+    <div class="col-sm-6">
+      <h1>Tableau de présence</h1>
+      <%= render "shared/chart" %>
+    </div>
+    
+  </div>
+</div>
+
+
+
+
 
 
 <style>
@@ -74,7 +151,7 @@
 }
 .product-controls a {
   padding: 0 20px;
-  font-size: 17px;
+  font-size: 30px;
   color: #312783;
 }
 .product-controls a:hover {
